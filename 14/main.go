@@ -4,21 +4,22 @@ import (
 	"fmt"
 )
 
-type Example struct {
-	Value string
+type Example struct { //создаем структуру
+	Value string // где одно поле строковое
 }
 
-type MyInterface interface{}
+type MyInterface interface{} //создаем интерфейс
 
-func example1() MyInterface {
-	var e *Example
-	return e
+func example1() MyInterface { //метод для интерфейса
+	var e *Example //объявляется переменная-указатель структуры Example
+	return e       //возвращаем её значение
 }
 
-func example2() MyInterface {
-	return nil
+func example2() MyInterface { //метод интерфейса
+	return nil //возвращает nil
 }
 
 func main() {
-	fmt.Println(example1() == example2())
+	fmt.Println(example1() == example2()) //не ноль vs ноль
+	// false
 }
